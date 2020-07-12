@@ -1,0 +1,5 @@
+model/Fattoriale.class
+interfaccia/Funzione.class
+implementazione/FlussoImpl.class
+Application.class
+interfaccia/Flusso.class
