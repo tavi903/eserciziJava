@@ -2,6 +2,8 @@ package model;
 
 import interfaccia.Clonabile;
 
+import java.util.Objects;
+
 public class Studente implements Comparable<Studente>, Clonabile<Studente> {
 
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<< ATTRIBUTES >>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -12,10 +14,7 @@ public class Studente implements Comparable<Studente>, Clonabile<Studente> {
     private Double mediaVoti;
 
     // indirizzo
-    private String via;
-    private String civico;
-    private String paese;
-    private String provincia;
+    private String via, civico, paese, provincia;
 
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<< CONSTRUCTORS >>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -135,5 +134,18 @@ public class Studente implements Comparable<Studente>, Clonabile<Studente> {
             that = new Studente(this.matricola, this.isMale, this.totaleCrediti, this.mediaVoti, this.via, this.civico, this.paese, this.provincia);
         }
         return that;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Studente studente = (Studente) o;
+        return matricola.equals(studente.matricola);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(matricola);
     }
 }

@@ -23,7 +23,7 @@ public class OrdinamentoUtils {
     public static <T extends Clonabile<T> & Comparable> List<T> insertSort(List<T> lista) {
         List<T> copia = new ArrayList<>();
         List<T> ordinata = new ArrayList<>();
-        lista.forEach(studente -> copia.add(studente.clona()));
+        lista.forEach(el -> copia.add(el.clona()));
         int min;
         for(int i = 0; i<lista.size(); i++) {
              min = trovaMinimo(copia);

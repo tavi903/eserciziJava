@@ -32,7 +32,7 @@ ricreare(in maniera personale) quello che è l'oggetto
 Stream in Java. Per fare questo ho definito un'interfaccia.
 ```
 public interface Flusso<S> {  
-     <T> FlussoImpl<T> mappa(Funzione<T,S> funzione);
+     <T> Flusso<T> mappa(Funzione<T,S> funzione);
  }
 ```
 Quest'interfaccia può essere superflua ma specifica 
@@ -68,3 +68,10 @@ public class FlussoImpl<S> implements Flusso<S> {
     }
 }
 ```
+
+## Ordinamento
+```public class Studente implements Comparable<Studente>```
+
+E all'interno della classe si effettua l'Override del metodo
+compareTo. Sarà sufficiente richiamare poi il metodo
+Collections.sort(). 
